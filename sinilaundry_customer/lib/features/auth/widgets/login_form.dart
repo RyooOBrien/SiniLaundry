@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:sinilaundry_customer/core/theme/app_spacing.dart';
 import 'package:sinilaundry_customer/core/widgets/custom_text_field.dart';
 import 'package:sinilaundry_customer/features/auth/widgets/auth_button.dart';
+import 'package:go_router/go_router.dart';
+import 'package:sinilaundry_customer/core/routes/app_routes.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({super.key});
@@ -96,7 +98,9 @@ class _LoginFormState extends State<LoginForm> {
           Align(
             alignment: Alignment.centerRight,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                context.push(AppRoutes.forgotPassword);
+              },
               child: const Text("Lupa Password?"),
             ),
           ),

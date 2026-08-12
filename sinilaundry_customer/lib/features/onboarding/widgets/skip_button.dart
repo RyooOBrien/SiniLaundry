@@ -12,7 +12,17 @@ class SkipButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: onPressed,
-      child: const Text("Lewati"),
+      style: TextButton.styleFrom(
+        foregroundColor: Colors.white,
+      ),
+      child: const Text(
+        "Lewati",
+        style: TextStyle(
+          fontSize: 15,
+          fontWeight: FontWeight.w600,
+          color: Colors.white,
+        ),
+      ),
     );
   }
 }

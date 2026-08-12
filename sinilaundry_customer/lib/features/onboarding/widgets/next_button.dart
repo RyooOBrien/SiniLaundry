@@ -18,21 +18,17 @@ class NextButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: AppColors.primary,
-          foregroundColor: Colors.white,
-          elevation: 0,
+          backgroundColor: Colors.white,
+          foregroundColor: AppColors.primary,
 
-          // Override dari AppTheme agar tidak full width
-          minimumSize: const Size(0, 56),
-          fixedSize: const Size(170, 56),
+          elevation: 10,
+          shadowColor: Colors.black.withValues(alpha: .18),
 
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 15,
-          ),
+          minimumSize: const Size(170, 56), 
+          fixedSize: const Size(180, 58),
 
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
+            borderRadius: BorderRadius.circular(30),
           ),
         ),
         child: Row(
@@ -40,16 +36,18 @@ class NextButton extends StatelessWidget {
           children: [
             Text(
               isLastPage ? "Mulai" : "Selanjutnya",
-              style: const TextStyle(
-                fontWeight: FontWeight.w600,
+              style: TextStyle(
+                color: AppColors.primary,
+                fontWeight: FontWeight.w700,
                 fontSize: 15,
               ),
             ),
 
             if (!isLastPage) ...[
               const SizedBox(width: 8),
-              const Icon(
+              Icon(
                 Icons.arrow_forward_rounded,
+                color: AppColors.primary,
                 size: 20,
               ),
             ],

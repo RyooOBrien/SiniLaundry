@@ -1,16 +1,18 @@
-import 'package:flutter/material.dart' ;
+import 'package:flutter/material.dart';
 import 'package:sinilaundry_customer/core/theme/app_text_styles.dart';
 
 class AuthHeader extends StatelessWidget {
   final String title;
   final String subtitle;
   final String description;
+  final String? description2;
 
   const AuthHeader({
     super.key,
     required this.title,
     required this.subtitle,
     required this.description,
+    this.description2,
   });
 
   @override
@@ -22,16 +24,29 @@ class AuthHeader extends StatelessWidget {
           title,
           style: AppTextStyles.displayLarge,
         ),
+
         const SizedBox(height: 8),
+
         Text(
           subtitle,
           style: AppTextStyles.heading1,
         ),
+
         const SizedBox(height: 8),
+
         Text(
           description,
           style: AppTextStyles.bodyMedium,
         ),
+
+        if (description2 != null) ...[
+          const SizedBox(height: 6),
+
+          Text(
+            description2!,
+            style: AppTextStyles.bodyMedium,
+          ),
+        ],
       ],
     );
   }
